@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      title: 'Notes App',
+      title: "Notes App",
       home: HomePage(),
       debugShowCheckedModeBanner: false,
     );
@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Notes App')),
+      appBar: AppBar(title: Text(S.of(context).title)),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
