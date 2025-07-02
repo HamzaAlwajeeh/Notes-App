@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:notes_app/Views/widgets/notes_view.dart';
+import 'package:notes_app/Views/notes_view.dart';
 import 'package:notes_app/generated/l10n.dart';
 
 void main() {
