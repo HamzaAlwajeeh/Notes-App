@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:notes_app/Views/notes_view.dart';
+import 'package:notes_app/Views/widgets/constants.dart';
 import 'package:notes_app/generated/l10n.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+
+  await Hive.openBox(kNotesBox);
+
   runApp(const NotesApp());
 }
 
