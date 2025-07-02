@@ -29,7 +29,7 @@ class CustomNoteItem extends StatelessWidget {
                 "Build your career with Hamza Yahya",
                 style: TextStyle(
                   color: Colors.black.withOpacity(0.4),
-                  fontSize: 20,
+                  fontSize: 18,
                 ),
               ),
             ),
