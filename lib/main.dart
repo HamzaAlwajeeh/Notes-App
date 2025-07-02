@@ -22,9 +22,9 @@ class NotesApp extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       title: "Notes App",
-      home: NotesView(),
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
+      theme: ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
+      home: NotesView(),
     );
   }
 }
