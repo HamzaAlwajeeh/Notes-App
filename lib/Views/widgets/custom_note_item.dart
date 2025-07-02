@@ -39,7 +39,7 @@ class CustomNoteItem extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 35),
+            padding: const EdgeInsets.symmetric(horizontal: 35),
             child: Text(
               "May 21,2025",
               style: TextStyle(

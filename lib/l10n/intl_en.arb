@@ -1,3 +1,6 @@
 {
-    "title" : "Notes"
+    "home_title" : "Notes",
+    "edit_title" : "Edit Note",
+    "title_hint" : "Title",
+    "content_hint" : "Content"
 }

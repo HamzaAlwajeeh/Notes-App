@@ -1,3 +1,6 @@
 {
-    "title" : "الملاحظات"
+    "home_title" : "الملاحظات",
+    "edit_title" : "تعديل الملاحظة",
+    "title_hint" : "العنوان",
+    "content_hint" : "المحتوى"
 }

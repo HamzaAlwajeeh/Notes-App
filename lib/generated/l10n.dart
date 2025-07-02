@@ -55,8 +55,23 @@ class S {
   }
 
   /// `Notes`
-  String get title {
-    return Intl.message('Notes', name: 'title', desc: '', args: []);
+  String get home_title {
+    return Intl.message('Notes', name: 'home_title', desc: '', args: []);
+  }
+
+  /// `Edit Note`
+  String get edit_title {
+    return Intl.message('Edit Note', name: 'edit_title', desc: '', args: []);
+  }
+
+  /// `Title`
+  String get title_hint {
+    return Intl.message('Title', name: 'title_hint', desc: '', args: []);
+  }
+
+  /// `Content`
+  String get content_hint {
+    return Intl.message('Content', name: 'content_hint', desc: '', args: []);
   }
 }
 
