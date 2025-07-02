@@ -1,6 +1,10 @@
 import 'package:hive/hive.dart';
 
-part 'note_model.g.dart';
+// Note: Make sure to run the following command in your terminal to generate the TypeAdapter
+// command:
+// flutter packages pub run build_runner build
+
+part 'note_model.g.dart'; //Same Name of The Model File
 
 @HiveType(typeId: 0)
 class NoteModel extends HiveObject {
