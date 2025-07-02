@@ -14,7 +14,7 @@ class EditNoteBody extends StatelessWidget {
         children: [
           SizedBox(height: 40),
           CustomAppBar(title: S.of(context).edit_title, icon: Icons.check),
-          SizedBox(height: 30),
+          SizedBox(height: 40),
           CustomTextField(hint: S.of(context).title_hint),
           SizedBox(height: 16),
           CustomTextField(maxLines: 5, hint: S.of(context).content_hint),
