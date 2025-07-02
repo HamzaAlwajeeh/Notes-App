@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:notes_app/Views/notes_view.dart';
 import 'package:notes_app/generated/l10n.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const NotesApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class NotesApp extends StatelessWidget {
+  const NotesApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,37 +22,9 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       title: "Notes App",
-      home: HomePage(),
+      home: NotesView(),
       debugShowCheckedModeBanner: false,
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(S.of(context).title)),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Welcome to the Notes App!',
-              style: TextStyle(fontSize: 24),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Placeholder for future functionality
-              },
-              child: const Text('Create a Note'),
-            ),
-          ],
-        ),
-      ),
+      theme: ThemeData.dark(),
     );
   }
 }

@@ -54,9 +54,9 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Notes App`
+  /// `Notes`
   String get title {
-    return Intl.message('Notes App', name: 'title', desc: '', args: []);
+    return Intl.message('Notes', name: 'title', desc: '', args: []);
   }
 }
 
