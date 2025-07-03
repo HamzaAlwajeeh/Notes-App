@@ -74,14 +74,19 @@ class S {
     return Intl.message('Content', name: 'content_hint', desc: '', args: []);
   }
 
-  /// `Please enter the  `
+  /// `Please enter the `
   String get inputError {
     return Intl.message(
-      'Please enter the  ',
+      'Please enter the ',
       name: 'inputError',
       desc: '',
       args: [],
     );
+  }
+
+  /// `Add`
+  String get saveButton {
+    return Intl.message('Add', name: 'saveButton', desc: '', args: []);
   }
 }
 

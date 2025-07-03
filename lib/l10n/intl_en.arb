@@ -3,5 +3,6 @@
     "edit_title" : "Edit Note",
     "title_hint" : "Title",
     "content_hint" : "Content",
-    "inputError" : "Please enter the  "
+    "inputError" : "Please enter the ",
+    "saveButton" : "Add"
 }

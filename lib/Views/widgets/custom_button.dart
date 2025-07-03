@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/generated/l10n.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key, this.onTap});
@@ -19,7 +20,7 @@ class CustomButton extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            "Add",
+            S.of(context).saveButton,
             style: TextStyle(
               color: Colors.white,
               fontSize: 20,
