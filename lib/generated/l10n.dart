@@ -73,6 +73,16 @@ class S {
   String get content_hint {
     return Intl.message('Content', name: 'content_hint', desc: '', args: []);
   }
+
+  /// `Please enter the  `
+  String get inputError {
+    return Intl.message(
+      'Please enter the  ',
+      name: 'inputError',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

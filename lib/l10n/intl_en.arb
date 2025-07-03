@@ -2,5 +2,6 @@
     "home_title" : "Notes",
     "edit_title" : "Edit Note",
     "title_hint" : "Title",
-    "content_hint" : "Content"
+    "content_hint" : "Content",
+    "inputError" : "Please enter the  "
 }

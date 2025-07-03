@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "content_hint": MessageLookupByLibrary.simpleMessage("Content"),
     "edit_title": MessageLookupByLibrary.simpleMessage("Edit Note"),
     "home_title": MessageLookupByLibrary.simpleMessage("Notes"),
+    "inputError": MessageLookupByLibrary.simpleMessage("Please enter the  "),
     "title_hint": MessageLookupByLibrary.simpleMessage("Title"),
   };
 }

@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "content_hint": MessageLookupByLibrary.simpleMessage("المحتوى"),
     "edit_title": MessageLookupByLibrary.simpleMessage("تعديل الملاحظة"),
     "home_title": MessageLookupByLibrary.simpleMessage("الملاحظات"),
+    "inputError": MessageLookupByLibrary.simpleMessage("الرجاء أدخل "),
     "title_hint": MessageLookupByLibrary.simpleMessage("العنوان"),
   };
 }
