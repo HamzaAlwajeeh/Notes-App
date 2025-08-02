@@ -88,6 +88,16 @@ class S {
   String get saveButton {
     return Intl.message('Add', name: 'saveButton', desc: '', args: []);
   }
+
+  /// `Note Added Successfully`
+  String get addSuccess {
+    return Intl.message(
+      'Note Added Successfully',
+      name: 'addSuccess',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

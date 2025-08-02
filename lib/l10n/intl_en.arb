@@ -4,5 +4,6 @@
     "title_hint" : "Title",
     "content_hint" : "Content",
     "inputError" : "Please enter the ",
-    "saveButton" : "Add"
+    "saveButton" : "Add",
+    "addSuccess" : "Note Added Successfully"
 }

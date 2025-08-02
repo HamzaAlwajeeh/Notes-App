@@ -4,5 +4,6 @@
     "title_hint" : "العنوان",
     "content_hint" : "المحتوى",
     "inputError" : "الرجاء إدخال ",
-    "saveButton" : "إضافة"
+    "saveButton" : "إضافة",
+    "addSuccess" : "تمت الإضافة بنجاح"
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/generated/l10n.dart';
 
 class CustomButton extends StatelessWidget {
@@ -8,6 +10,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isLoading = BlocProvider.of<AddNoteCubit>(context).isLoading;
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -19,14 +22,17 @@ class CustomButton extends StatelessWidget {
           color: Color(0xff4F378B),
         ),
         child: Center(
-          child: Text(
-            S.of(context).saveButton,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          child:
+              isLoading
+                  ? CircularProgressIndicator()
+                  : Text(
+                    S.of(context).saveButton,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
         ),
       ),
     );
