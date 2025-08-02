@@ -98,6 +98,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Note Edited Successfully`
+  String get editSuccess {
+    return Intl.message(
+      'Note Edited Successfully',
+      name: 'editSuccess',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

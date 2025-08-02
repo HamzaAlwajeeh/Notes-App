@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "addSuccess": MessageLookupByLibrary.simpleMessage("تمت الإضافة بنجاح"),
     "content_hint": MessageLookupByLibrary.simpleMessage("المحتوى"),
+    "editSuccess": MessageLookupByLibrary.simpleMessage("تمت التعديل بنجاح"),
     "edit_title": MessageLookupByLibrary.simpleMessage("تعديل الملاحظة"),
     "home_title": MessageLookupByLibrary.simpleMessage("الملاحظات"),
     "inputError": MessageLookupByLibrary.simpleMessage("الرجاء إدخال "),

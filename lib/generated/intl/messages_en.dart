@@ -26,6 +26,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Note Added Successfully",
     ),
     "content_hint": MessageLookupByLibrary.simpleMessage("Content"),
+    "editSuccess": MessageLookupByLibrary.simpleMessage(
+      "Note Edited Successfully",
+    ),
     "edit_title": MessageLookupByLibrary.simpleMessage("Edit Note"),
     "home_title": MessageLookupByLibrary.simpleMessage("Notes"),
     "inputError": MessageLookupByLibrary.simpleMessage("Please enter the "),

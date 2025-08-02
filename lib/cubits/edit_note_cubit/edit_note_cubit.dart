@@ -10,7 +10,7 @@ class EditNoteCubit extends Cubit<EditNoteState> {
     emit(EditNoteLoadingState());
     try {
       // var noteBox = Hive.box<NoteModel>(kNotesBox);
-
+      await Future.delayed(Duration(seconds: 3));
       emit(EditNoteSuccessState());
     } catch (e) {
       emit(EditNoteFailureState(errorMessage: e.toString()));
