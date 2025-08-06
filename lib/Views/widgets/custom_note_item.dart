@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/Views/screens/edit_note_view.dart';
+import 'package:notes_app/cubits/edit_note_cubit/edit_note_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 
 class CustomNoteItem extends StatelessWidget {
@@ -9,9 +11,10 @@ class CustomNoteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        BlocProvider.of<EditNoteCubit>(context).setNoteValues(note);
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const EditNoteView()),
+          MaterialPageRoute(builder: (context) => EditNoteView()),
         );
       },
       child: Container(

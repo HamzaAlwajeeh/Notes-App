@@ -16,4 +16,9 @@ class EditNoteCubit extends Cubit<EditNoteState> {
       emit(EditNoteFailureState(errorMessage: e.toString()));
     }
   }
+
+  NoteModel? note;
+  setNoteValues(NoteModel note) {
+    this.note = note;
+  }
 }

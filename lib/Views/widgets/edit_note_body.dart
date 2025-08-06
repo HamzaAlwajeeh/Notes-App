@@ -32,6 +32,7 @@ class _EditNoteFieldState extends State<EditNoteField> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   @override
   Widget build(BuildContext context) {
+    NoteModel? editingNote = BlocProvider.of<EditNoteCubit>(context).note;
     return Form(
       key: formKey,
       autovalidateMode: autovalidateMode,
@@ -45,10 +46,10 @@ class _EditNoteFieldState extends State<EditNoteField> {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
                 var noteEditing = NoteModel(
-                  title: title!,
-                  subTitle: subTitle!,
+                  title: title ?? editingNote!.title,
+                  subTitle: subTitle ?? editingNote!.subTitle,
                   date: DateTime.now().toString(),
-                  color: Colors.blue.toARGB32(),
+                  color: editingNote!.color,
                 );
                 BlocProvider.of<EditNoteCubit>(
                   context,
@@ -61,6 +62,7 @@ class _EditNoteFieldState extends State<EditNoteField> {
           ),
           SizedBox(height: 40),
           CustomTextField(
+            initialValue: editingNote?.title,
             hint: S.of(context).title_hint,
             onSaved: (value) {
               title = value;
@@ -68,6 +70,7 @@ class _EditNoteFieldState extends State<EditNoteField> {
           ),
           SizedBox(height: 16),
           CustomTextField(
+            initialValue: editingNote?.subTitle,
             maxLines: 5,
             hint: S.of(context).content_hint,
             onSaved: (value) {

@@ -8,27 +8,23 @@ import 'package:notes_app/helper/custom_snak_bar.dart';
 
 class EditNoteView extends StatelessWidget {
   const EditNoteView({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => EditNoteCubit(),
-      child: BlocConsumer<EditNoteCubit, EditNoteState>(
-        listener: (context, state) {
-          if (state is EditNoteLoadingState) {
-          } else if (state is EditNoteSuccessState) {
-            customSnakBatr(context, message: S.of(context).editSuccess);
-            Navigator.of(context).pop();
-          } else if (state is EditNoteFailureState) {
-            customSnakBatr(context, message: state.errorMessage);
-          }
-        },
-        builder:
-            (context, state) => ModalProgressHUD(
-              inAsyncCall: state is EditNoteLoadingState ? true : false,
-              child: Scaffold(body: EditNoteBody()),
-            ),
-      ),
+    return BlocConsumer<EditNoteCubit, EditNoteState>(
+      listener: (context, state) {
+        if (state is EditNoteLoadingState) {
+        } else if (state is EditNoteSuccessState) {
+          customSnakBatr(context, message: S.of(context).editSuccess);
+          Navigator.of(context).pop();
+        } else if (state is EditNoteFailureState) {
+          customSnakBatr(context, message: state.errorMessage);
+        }
+      },
+      builder:
+          (context, state) => ModalProgressHUD(
+            inAsyncCall: state is EditNoteLoadingState ? true : false,
+            child: Scaffold(body: EditNoteBody()),
+          ),
     );
   }
 }
