@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/Views/screens/edit_note_view.dart';
+import 'package:notes_app/models/note_model.dart';
 
 class CustomNoteItem extends StatelessWidget {
-  const CustomNoteItem({super.key});
-
+  const CustomNoteItem({super.key, required this.note});
+  final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
