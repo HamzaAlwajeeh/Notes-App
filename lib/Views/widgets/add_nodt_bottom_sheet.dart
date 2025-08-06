@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/Views/widgets/add_note_form.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/generated/l10n.dart';
 import 'package:notes_app/helper/custom_snak_bar.dart';
 
@@ -27,6 +28,7 @@ class AddNoteBottomSheet extends StatelessWidget {
                   message: S.of(context).addSuccess,
                   isSuccess: true,
                 );
+                BlocProvider.of<NotesCubit>(context).feachAllNotes();
                 Navigator.of(context).pop();
               } else if (state is AddNoteFailure) {
                 customSnakBatr(
