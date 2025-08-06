@@ -8,14 +8,17 @@ import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/generated/l10n.dart';
 import 'package:notes_app/models/note_model.dart';
+import 'package:notes_app/models/setting_model.dart';
 import 'package:notes_app/simple_bloc_observer.dart';
 
 void main() async {
   await Hive.initFlutter();
 
   Hive.registerAdapter(NoteModelAdapter());
+  Hive.registerAdapter(SettingModelAdapter());
 
   await Hive.openBox<NoteModel>(kNotesBox);
+  await Hive.openBox<SettingModel>(kSettingsBox);
 
   Bloc.observer = SimpleBlocObserver();
   runApp(const NotesApp());
