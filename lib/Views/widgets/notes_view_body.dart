@@ -21,7 +21,7 @@ class _NotesViewBodyState extends State<NotesViewBody> {
       padding: EdgeInsets.symmetric(horizontal: 25),
       child: Column(
         children: [
-          SizedBox(height: 40),
+          SizedBox(height: 50),
           isSearch
               ? CustomTextField(
                 hint: S.of(context).searchNote,
