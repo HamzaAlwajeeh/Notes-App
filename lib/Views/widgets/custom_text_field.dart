@@ -36,26 +36,25 @@ class CustomTextField extends StatelessWidget {
         return null;
       },
       maxLines: maxLines,
-      cursorColor: kPrimaryColor,
-
+      cursorColor: Colors.white.withOpacity(0.7),
       decoration: InputDecoration(
+        filled: true,
+        fillColor: kPrimaryColor.withOpacity(0.1),
         suffixIcon: IconButton(
           icon: Icon(suffixIcon),
           onPressed: onSuffixIconPressed,
         ),
         hintText: hint,
-        hintStyle: TextStyle(color: kPrimaryColor),
+        hintStyle: TextStyle(color: Colors.white.withOpacity(0.7)),
         border: buildBorder(),
         enabledBorder: buildBorder(),
-        focusedBorder: buildBorder(color: kPrimaryColor),
+        focusedBorder: buildBorder(),
+        contentPadding: EdgeInsets.all(15),
       ),
     );
   }
 
-  OutlineInputBorder buildBorder({Color color = Colors.white}) {
-    return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(8),
-      borderSide: BorderSide(color: color),
-    );
+  OutlineInputBorder buildBorder() {
+    return OutlineInputBorder(borderRadius: BorderRadius.circular(12));
   }
 }

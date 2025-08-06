@@ -5,7 +5,6 @@ import 'package:notes_app/Views/widgets/custom_text_field.dart';
 import 'package:notes_app/Views/widgets/notes_list_view.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/generated/l10n.dart';
-import 'package:notes_app/models/note_model.dart';
 
 class NotesViewBody extends StatefulWidget {
   const NotesViewBody({super.key});
@@ -16,7 +15,6 @@ class NotesViewBody extends StatefulWidget {
 
 class _NotesViewBodyState extends State<NotesViewBody> {
   bool isSearch = false;
-  List<NoteModel> searchedNotes = [];
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -32,6 +30,7 @@ class _NotesViewBodyState extends State<NotesViewBody> {
                   setState(() {
                     isSearch = false;
                   });
+                  BlocProvider.of<NotesCubit>(context).feachAllNotes();
                 },
                 onChanged: (value) {
                   BlocProvider.of<NotesCubit>(context).searchedNotes(value!);
