@@ -1,29 +1,29 @@
+import 'package:delightful_toast/delight_toast.dart';
+import 'package:delightful_toast/toast/components/toast_card.dart';
+import 'package:delightful_toast/toast/utils/enums.dart';
 import 'package:flutter/material.dart';
-import 'package:notes_app/constants/constants.dart';
 
-void customSnakBatr(
-  BuildContext context, {
+void customToastBar({
+  required BuildContext context,
   required String message,
-  bool isSuccess = false,
+  required IconData icon,
+  required Color backgroundColor,
+  required Color textColor,
+  required DelightSnackbarPosition postion,
 }) {
-  ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(
-      // duration: Duration(seconds: 5),
-      behavior: SnackBarBehavior.floating,
-      elevation: 2,
-      width: MediaQuery.of(context).size.width - 30,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      backgroundColor: kPrimaryDarkColor,
-      padding: EdgeInsets.all(20),
-      content: Text(
-        message,
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 16,
-          color: kPrimaryColor,
+  return DelightToastBar(
+    builder: (context) {
+      return ToastCard(
+        color: backgroundColor,
+        leading: Icon(icon, size: 30, color: textColor),
+        title: Text(
+          message,
+          style: TextStyle(color: textColor, fontWeight: FontWeight.bold),
         ),
-      ),
-    ),
-  );
+      );
+    },
+    position: postion,
+    autoDismiss: true,
+    animationDuration: Duration(milliseconds: 900),
+  ).show(context);
 }

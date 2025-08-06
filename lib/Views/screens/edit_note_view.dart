@@ -1,7 +1,9 @@
+import 'package:delightful_toast/toast/utils/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/Views/widgets/custom_app_bar.dart';
 import 'package:notes_app/Views/widgets/custom_text_field.dart';
+import 'package:notes_app/constants/constants.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/generated/l10n.dart';
 import 'package:notes_app/helper/custom_snak_bar.dart';
@@ -71,7 +73,14 @@ class _EditNoteFieldState extends State<EditNoteField> {
     widget.editingNote.subTitle = subTitle ?? widget.editingNote.subTitle;
     widget.editingNote.save();
     BlocProvider.of<NotesCubit>(context).feachAllNotes();
-    customSnakBatr(context, message: S.of(context).editSuccess);
+    customToastBar(
+      context: context,
+      message: S.of(context).editSuccess,
+      icon: Icons.edit_note,
+      backgroundColor: kPrimaryDarkColor,
+      textColor: kPrimaryColor,
+      postion: DelightSnackbarPosition.bottom,
+    );
     Navigator.pop(context);
   }
 }

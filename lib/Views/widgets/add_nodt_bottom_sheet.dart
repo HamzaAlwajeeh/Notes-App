@@ -1,6 +1,8 @@
+import 'package:delightful_toast/toast/utils/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/Views/widgets/add_note_form.dart';
+import 'package:notes_app/constants/constants.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/generated/l10n.dart';
@@ -23,18 +25,24 @@ class AddNoteBottomSheet extends StatelessWidget {
           child: BlocConsumer<AddNoteCubit, AddNoteState>(
             listener: (context, state) {
               if (state is AddNoteSuccess) {
-                customSnakBatr(
-                  context,
+                customToastBar(
+                  context: context,
                   message: S.of(context).addSuccess,
-                  isSuccess: true,
+                  icon: Icons.check,
+                  backgroundColor: kPrimaryDarkColor,
+                  textColor: kPrimaryColor,
+                  postion: DelightSnackbarPosition.top,
                 );
                 BlocProvider.of<NotesCubit>(context).feachAllNotes();
                 Navigator.of(context).pop();
               } else if (state is AddNoteFailure) {
-                customSnakBatr(
-                  context,
+                customToastBar(
+                  context: context,
                   message: state.errorMessage,
-                  isSuccess: false,
+                  icon: Icons.error,
+                  backgroundColor: kPrimaryDarkColor,
+                  textColor: kPrimaryColor,
+                  postion: DelightSnackbarPosition.top,
                 );
               }
             },

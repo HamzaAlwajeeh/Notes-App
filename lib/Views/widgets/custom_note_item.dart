@@ -1,7 +1,9 @@
+import 'package:delightful_toast/toast/utils/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:notes_app/Views/screens/edit_note_view.dart';
+import 'package:notes_app/constants/constants.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/generated/l10n.dart';
 import 'package:notes_app/helper/custom_snak_bar.dart';
@@ -20,7 +22,14 @@ class CustomNoteItem extends StatelessWidget {
             onPressed: (context) {
               note.delete();
               BlocProvider.of<NotesCubit>(context).feachAllNotes();
-              customSnakBatr(context, message: S.of(context).deletSuccess);
+              customToastBar(
+                context: context,
+                message: S.of(context).deletSuccess,
+                icon: Icons.check,
+                backgroundColor: kPrimaryDarkColor,
+                textColor: kPrimaryColor,
+                postion: DelightSnackbarPosition.top,
+              );
             },
             backgroundColor: Colors.red,
             borderRadius: BorderRadius.circular(16),
