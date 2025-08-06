@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:notes_app/Views/screens/notes_view.dart';
+import 'package:notes_app/Views/screens/splash_view.dart';
 import 'package:notes_app/constants/constants.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
@@ -46,7 +46,7 @@ class NotesApp extends StatelessWidget {
         title: "Notes App",
         debugShowCheckedModeBanner: false,
         theme: ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
-        home: NotesView(),
+        home: SplashView(),
       ),
     );
   }
