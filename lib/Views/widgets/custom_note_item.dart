@@ -60,7 +60,7 @@ class CustomNoteItem extends StatelessWidget {
           );
         },
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 25),
+          padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
           width: double.infinity,
           decoration: BoxDecoration(
             color: Color(note.color),
@@ -71,29 +71,29 @@ class CustomNoteItem extends StatelessWidget {
             children: [
               ListTile(
                 title: Padding(
-                  padding: const EdgeInsets.only(bottom: 16),
+                  padding: const EdgeInsets.only(bottom: 12),
                   child: Text(
                     note.title,
-                    style: TextStyle(color: Colors.black, fontSize: 28),
+                    style: TextStyle(color: Colors.white, fontSize: 28),
                   ),
                 ),
                 subtitle: Padding(
-                  padding: const EdgeInsets.only(bottom: 16),
+                  padding: const EdgeInsets.only(bottom: 12),
                   child: Text(
                     note.subTitle,
                     style: TextStyle(
-                      color: Colors.black.withOpacity(0.4),
+                      color: Colors.white.withOpacity(0.6),
                       fontSize: 18,
                     ),
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
                   note.date,
                   style: TextStyle(
-                    color: Colors.black.withOpacity(0.4),
+                    color: Colors.white.withOpacity(0.6),
                     fontSize: 14,
                   ),
                 ),

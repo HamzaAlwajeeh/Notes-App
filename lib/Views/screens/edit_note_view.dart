@@ -1,9 +1,11 @@
 import 'package:delightful_toast/toast/utils/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/Views/widgets/colors_list_view.dart';
 import 'package:notes_app/Views/widgets/custom_app_bar.dart';
 import 'package:notes_app/Views/widgets/custom_text_field.dart';
 import 'package:notes_app/constants/constants.dart';
+import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/generated/l10n.dart';
 import 'package:notes_app/helper/custom_snak_bar.dart';
@@ -63,7 +65,9 @@ class _EditNoteFieldState extends State<EditNoteField> {
             subTitle = value;
           },
         ),
-        SizedBox(height: 50),
+        SizedBox(height: 30),
+        ColorItemsListView(),
+        SizedBox(height: 30),
       ],
     );
   }
@@ -71,6 +75,8 @@ class _EditNoteFieldState extends State<EditNoteField> {
   void editNodeMethod(BuildContext context) {
     widget.editingNote.title = title ?? widget.editingNote.title;
     widget.editingNote.subTitle = subTitle ?? widget.editingNote.subTitle;
+    widget.editingNote.color =
+        BlocProvider.of<AddNoteCubit>(context).selectedColor.toARGB32();
     widget.editingNote.save();
     BlocProvider.of<NotesCubit>(context).feachAllNotes();
     customToastBar(

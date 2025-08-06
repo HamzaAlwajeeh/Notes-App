@@ -13,45 +13,42 @@ class AddNoteBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => AddNoteCubit(),
-      child: Padding(
-        padding: EdgeInsets.only(
-          left: 24,
-          right: 24,
-          bottom: MediaQuery.of(context).viewInsets.bottom,
-        ),
-        child: SingleChildScrollView(
-          child: BlocConsumer<AddNoteCubit, AddNoteState>(
-            listener: (context, state) {
-              if (state is AddNoteSuccess) {
-                customToastBar(
-                  context: context,
-                  message: S.of(context).addSuccess,
-                  icon: Icons.check,
-                  backgroundColor: kPrimaryDarkColor,
-                  textColor: kPrimaryColor,
-                  postion: DelightSnackbarPosition.bottom,
-                );
-                BlocProvider.of<NotesCubit>(context).feachAllNotes();
-                Navigator.of(context).pop();
-              } else if (state is AddNoteFailure) {
-                customToastBar(
-                  context: context,
-                  message: state.errorMessage,
-                  icon: Icons.error,
-                  backgroundColor: kPrimaryDarkColor,
-                  textColor: kPrimaryColor,
-                  postion: DelightSnackbarPosition.bottom,
-                );
-              }
-            },
-            builder:
-                (context, state) => AbsorbPointer(
-                  absorbing: state is AddNoteLoading ? true : false,
-                  child: AddNoteForm(),
-                ),
-          ),
+    return Padding(
+      padding: EdgeInsets.only(
+        left: 24,
+        right: 24,
+        bottom: MediaQuery.of(context).viewInsets.bottom,
+      ),
+      child: SingleChildScrollView(
+        child: BlocConsumer<AddNoteCubit, AddNoteState>(
+          listener: (context, state) {
+            if (state is AddNoteSuccess) {
+              customToastBar(
+                context: context,
+                message: S.of(context).addSuccess,
+                icon: Icons.check,
+                backgroundColor: kPrimaryDarkColor,
+                textColor: kPrimaryColor,
+                postion: DelightSnackbarPosition.bottom,
+              );
+              BlocProvider.of<NotesCubit>(context).feachAllNotes();
+              Navigator.of(context).pop();
+            } else if (state is AddNoteFailure) {
+              customToastBar(
+                context: context,
+                message: state.errorMessage,
+                icon: Icons.error,
+                backgroundColor: kPrimaryDarkColor,
+                textColor: kPrimaryColor,
+                postion: DelightSnackbarPosition.bottom,
+              );
+            }
+          },
+          builder:
+              (context, state) => AbsorbPointer(
+                absorbing: state is AddNoteLoading ? true : false,
+                child: AddNoteForm(),
+              ),
         ),
       ),
     );

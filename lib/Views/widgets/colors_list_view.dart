@@ -13,14 +13,14 @@ class ColorItemsListView extends StatefulWidget {
 class _ColorItemsListViewState extends State<ColorItemsListView> {
   int selectedColor = 0;
   List<Color> colorsList = const [
-    Color(0xff006D77),
-    Color(0xff83C5BE),
-    Color(0xffedf6f9),
-    Color(0xffFFDDD2),
-    Color(0xffe29578),
-    Color(0xffFDF0D5),
-    Color(0xffc77dff),
-    Color(0xffe0aaff),
+    Color(0xff0E1F2F),
+    Color(0xff262628),
+    Color(0xff21242A),
+    Color(0xff111923),
+    Color(0xff0d1b2a),
+    Color(0xff001233),
+    Color(0xff50514f),
+    Color(0xff563C5C),
   ];
   @override
   Widget build(BuildContext context) {
