@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "home_title": MessageLookupByLibrary.simpleMessage("الملاحظات"),
     "inputError": MessageLookupByLibrary.simpleMessage("الرجاء إدخال "),
     "saveButton": MessageLookupByLibrary.simpleMessage("إضافة"),
+    "searchNote": MessageLookupByLibrary.simpleMessage("...ابحث عن ملاحظة"),
     "title_hint": MessageLookupByLibrary.simpleMessage("العنوان"),
   };
 }

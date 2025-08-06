@@ -10,13 +10,17 @@ class CustomTextField extends StatelessWidget {
     this.onSaved,
     this.initialValue,
     this.onChanged,
+    this.suffixIcon,
+    this.onSuffixIconPressed,
   });
   final int maxLines;
   final String hint;
   final String? initialValue;
+  final IconData? suffixIcon;
 
   final void Function(String?)? onSaved;
   final void Function(String?)? onChanged;
+  final void Function()? onSuffixIconPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +37,12 @@ class CustomTextField extends StatelessWidget {
       },
       maxLines: maxLines,
       cursorColor: kPrimaryColor,
+
       decoration: InputDecoration(
+        suffixIcon: IconButton(
+          icon: Icon(suffixIcon),
+          onPressed: onSuffixIconPressed,
+        ),
         hintText: hint,
         hintStyle: TextStyle(color: kPrimaryColor),
         border: buildBorder(),

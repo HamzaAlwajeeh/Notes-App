@@ -123,6 +123,16 @@ class S {
   String get deleteButton {
     return Intl.message('Delete', name: 'deleteButton', desc: '', args: []);
   }
+
+  /// `Search Note...`
+  String get searchNote {
+    return Intl.message(
+      'Search Note...',
+      name: 'searchNote',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

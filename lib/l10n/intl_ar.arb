@@ -8,5 +8,6 @@
     "addSuccess" : "تمت الإضافة بنجاح",
     "editSuccess" : "تم التعديل بنجاح",
     "deletSuccess" : "تم الحذف بنجاح",
-    "deleteButton" : "حذف"
+    "deleteButton" : "حذف",
+    "searchNote" : "...ابحث عن ملاحظة"
 }

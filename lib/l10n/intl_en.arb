@@ -8,5 +8,7 @@
     "addSuccess" : "Note Added Successfully",
     "editSuccess" : "Note Edited Successfully",
     "deletSuccess" : "Note Deleted Successfully",
-    "deleteButton" : "Delete"
+    "deleteButton" : "Delete",
+    "searchNote" : "Search Note..."
+
 }

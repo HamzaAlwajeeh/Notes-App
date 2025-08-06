@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/Views/widgets/custom_app_bar.dart';
+import 'package:notes_app/Views/widgets/custom_text_field.dart';
 import 'package:notes_app/Views/widgets/notes_list_view.dart';
+import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/generated/l10n.dart';
+import 'package:notes_app/models/note_model.dart';
 
-class NotesViewBody extends StatelessWidget {
+class NotesViewBody extends StatefulWidget {
   const NotesViewBody({super.key});
 
+  @override
+  State<NotesViewBody> createState() => _NotesViewBodyState();
+}
+
+class _NotesViewBodyState extends State<NotesViewBody> {
+  bool isSearch = false;
+  List<NoteModel> searchedNotes = [];
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,7 +24,28 @@ class NotesViewBody extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 40),
-          CustomAppBar(title: S.of(context).home_title, icon: Icons.search),
+          isSearch
+              ? CustomTextField(
+                hint: S.of(context).searchNote,
+                suffixIcon: Icons.close,
+                onSuffixIconPressed: () {
+                  setState(() {
+                    isSearch = false;
+                  });
+                },
+                onChanged: (value) {
+                  BlocProvider.of<NotesCubit>(context).searchedNotes(value!);
+                },
+              )
+              : CustomAppBar(
+                title: S.of(context).home_title,
+                icon: Icons.search,
+                onTap: () {
+                  setState(() {
+                    isSearch = true;
+                  });
+                },
+              ),
           Expanded(child: NotesListView()),
         ],
       ),
