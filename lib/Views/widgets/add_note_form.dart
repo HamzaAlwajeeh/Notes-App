@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:notes_app/Views/widgets/colors_list_view.dart';
 import 'package:notes_app/Views/widgets/custom_button.dart';
 import 'package:notes_app/Views/widgets/custom_text_field.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
@@ -42,7 +43,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
               subtitle = value;
             },
           ),
-          SizedBox(height: 50),
+          SizedBox(height: 20),
+          ColorItemsListView(),
+          SizedBox(height: 20),
+
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder:
                 (context, state) => CustomButton(
@@ -54,24 +58,26 @@ class _AddNoteFormState extends State<AddNoteForm> {
                     ).format(currentDate);
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
-                      var note = NoteModel(
-                        title: title!,
-                        subTitle: subtitle!,
-                        date: formattedDate,
-                        color: Colors.amber.toARGB32(),
-                      );
-                      BlocProvider.of<AddNoteCubit>(
-                        context,
-                      ).addNote(note: note);
+                      addNoteMethod(formattedDate, context);
                     } else {
                       autovalidateMode = AutovalidateMode.always;
                     }
                   },
                 ),
           ),
-          SizedBox(height: 16),
+          SizedBox(height: 20),
         ],
       ),
     );
+  }
+
+  void addNoteMethod(String formattedDate, BuildContext context) {
+    var note = NoteModel(
+      title: title!,
+      subTitle: subtitle!,
+      date: formattedDate,
+      color: Colors.amber.toARGB32(),
+    );
+    BlocProvider.of<AddNoteCubit>(context).addNote(note: note);
   }
 }

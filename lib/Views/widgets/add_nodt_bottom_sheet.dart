@@ -31,7 +31,7 @@ class AddNoteBottomSheet extends StatelessWidget {
                   icon: Icons.check,
                   backgroundColor: kPrimaryDarkColor,
                   textColor: kPrimaryColor,
-                  postion: DelightSnackbarPosition.top,
+                  postion: DelightSnackbarPosition.bottom,
                 );
                 BlocProvider.of<NotesCubit>(context).feachAllNotes();
                 Navigator.of(context).pop();
@@ -42,7 +42,7 @@ class AddNoteBottomSheet extends StatelessWidget {
                   icon: Icons.error,
                   backgroundColor: kPrimaryDarkColor,
                   textColor: kPrimaryColor,
-                  postion: DelightSnackbarPosition.top,
+                  postion: DelightSnackbarPosition.bottom,
                 );
               }
             },

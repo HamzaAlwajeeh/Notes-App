@@ -28,7 +28,7 @@ class CustomNoteItem extends StatelessWidget {
                 icon: Icons.check,
                 backgroundColor: kPrimaryDarkColor,
                 textColor: kPrimaryColor,
-                postion: DelightSnackbarPosition.top,
+                postion: DelightSnackbarPosition.bottom,
               );
             },
             backgroundColor: Colors.red,
