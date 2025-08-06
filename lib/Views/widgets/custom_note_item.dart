@@ -18,7 +18,7 @@ class CustomNoteItem extends StatelessWidget {
         padding: EdgeInsets.only(top: 25, bottom: 25, left: 16),
         width: double.infinity,
         decoration: BoxDecoration(
-          color: const Color(0xffFFCC80),
+          color: Color(note.color),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
@@ -28,14 +28,14 @@ class CustomNoteItem extends StatelessWidget {
               title: Padding(
                 padding: const EdgeInsets.only(bottom: 16),
                 child: Text(
-                  "Flutter Tips",
+                  note.title,
                   style: TextStyle(color: Colors.black, fontSize: 28),
                 ),
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.only(bottom: 16),
                 child: Text(
-                  "Build your career with Hamza Yahya",
+                  note.subTitle,
                   style: TextStyle(
                     color: Colors.black.withOpacity(0.4),
                     fontSize: 18,
@@ -50,7 +50,7 @@ class CustomNoteItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 35),
               child: Text(
-                "May 21,2025",
+                note.date,
                 style: TextStyle(
                   color: Colors.black.withOpacity(0.4),
                   fontSize: 14,
