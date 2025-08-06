@@ -6,5 +6,7 @@
     "inputError" : "Please enter the ",
     "saveButton" : "Add",
     "addSuccess" : "Note Added Successfully",
-    "editSuccess" : "Note Edited Successfully"
+    "editSuccess" : "Note Edited Successfully",
+    "deletSuccess" : "Note Deleted Successfully",
+    "deleteButton" : "Delete"
 }

@@ -108,6 +108,21 @@ class S {
       args: [],
     );
   }
+
+  /// `Note Deleted Successfully`
+  String get deletSuccess {
+    return Intl.message(
+      'Note Deleted Successfully',
+      name: 'deletSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete`
+  String get deleteButton {
+    return Intl.message('Delete', name: 'deleteButton', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

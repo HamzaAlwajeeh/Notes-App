@@ -4,7 +4,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:notes_app/Views/screens/notes_view.dart';
 import 'package:notes_app/constants/constants.dart';
-import 'package:notes_app/cubits/edit_note_cubit/edit_note_cubit.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/generated/l10n.dart';
 import 'package:notes_app/models/note_model.dart';
@@ -27,29 +26,20 @@ class NotesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => EditNoteCubit()),
-        BlocProvider(create: (context) => NotesCubit()),
-      ],
-      child: MultiBlocProvider(
-        providers: [
-          BlocProvider(create: (context) => EditNoteCubit()),
-          BlocProvider(create: (context) => NotesCubit()),
+      providers: [BlocProvider(create: (context) => NotesCubit())],
+      child: MaterialApp(
+        locale: const Locale('en'),
+        localizationsDelegates: [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
         ],
-        child: MaterialApp(
-          locale: const Locale('en'),
-          localizationsDelegates: [
-            S.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: S.delegate.supportedLocales,
-          title: "Notes App",
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
-          home: NotesView(),
-        ),
+        supportedLocales: S.delegate.supportedLocales,
+        title: "Notes App",
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
+        home: NotesView(),
       ),
     );
   }

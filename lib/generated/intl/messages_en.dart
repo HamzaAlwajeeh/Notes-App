@@ -26,6 +26,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Note Added Successfully",
     ),
     "content_hint": MessageLookupByLibrary.simpleMessage("Content"),
+    "deletSuccess": MessageLookupByLibrary.simpleMessage(
+      "Note Deleted Successfully",
+    ),
+    "deleteButton": MessageLookupByLibrary.simpleMessage("Delete"),
     "editSuccess": MessageLookupByLibrary.simpleMessage(
       "Note Edited Successfully",
     ),

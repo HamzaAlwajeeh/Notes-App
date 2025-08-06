@@ -6,5 +6,7 @@
     "inputError" : "الرجاء إدخال ",
     "saveButton" : "إضافة",
     "addSuccess" : "تمت الإضافة بنجاح",
-    "editSuccess" : "تمت التعديل بنجاح"
+    "editSuccess" : "تم التعديل بنجاح",
+    "deletSuccess" : "تم الحذف بنجاح",
+    "deleteButton" : "حذف"
 }
