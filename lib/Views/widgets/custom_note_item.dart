@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/Views/screens/edit_note_view.dart';
 import 'package:notes_app/cubits/edit_note_cubit/edit_note_cubit.dart';
+import 'package:notes_app/helper/custom_snak_bar.dart';
 import 'package:notes_app/models/note_model.dart';
 
 class CustomNoteItem extends StatelessWidget {
@@ -46,7 +47,10 @@ class CustomNoteItem extends StatelessWidget {
                 ),
               ),
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  note.delete();
+                  customSnakBatr(context, message: 'Note Deleted Successfully');
+                },
                 icon: Icon(Icons.delete, size: 30, color: Colors.black),
               ),
             ),
