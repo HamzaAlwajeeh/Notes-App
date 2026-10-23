@@ -28,44 +28,55 @@ class _AddNoteFormState extends State<AddNoteForm> {
       autovalidateMode: autovalidateMode,
       child: Column(
         children: [
-          SizedBox(height: 30),
-          CustomTextField(
-            hint: S.of(context).title_hint,
-            onSaved: (value) {
-              title = value;
-            },
-          ),
-          SizedBox(height: 16),
-          CustomTextField(
-            maxLines: 5,
-            hint: S.of(context).content_hint,
-            onSaved: (value) {
-              subtitle = value;
-            },
-          ),
-          SizedBox(height: 20),
-          ColorItemsListView(),
-          SizedBox(height: 20),
-
-          BlocBuilder<AddNoteCubit, AddNoteState>(
-            builder:
-                (context, state) => CustomButton(
-                  isLoading: state is AddNoteLoading ? true : false,
-                  onTap: () {
-                    var currentDate = DateTime.now();
-                    var formattedDate = DateFormat(
-                      'dd-MM-yyyy',
-                    ).format(currentDate);
-                    if (formKey.currentState!.validate()) {
-                      formKey.currentState!.save();
-                      addNoteMethod(formattedDate, context);
-                    } else {
-                      autovalidateMode = AutovalidateMode.always;
-                    }
+          Padding(
+            padding: const EdgeInsets.only(left: 24, right: 24),
+            child: Column(
+              children: [
+                SizedBox(height: 30),
+                CustomTextField(
+                  hint: S.of(context).title_hint,
+                  onSaved: (value) {
+                    title = value;
                   },
                 ),
+                SizedBox(height: 16),
+                CustomTextField(
+                  maxLines: 5,
+                  hint: S.of(context).content_hint,
+                  onSaved: (value) {
+                    subtitle = value;
+                  },
+                ),
+                SizedBox(height: 20),
+              ],
+            ),
           ),
-          SizedBox(height: 20),
+          Column(
+            children: [
+              ColorItemsListView(),
+              SizedBox(height: 20),
+
+              BlocBuilder<AddNoteCubit, AddNoteState>(
+                builder:
+                    (context, state) => CustomButton(
+                      isLoading: state is AddNoteLoading ? true : false,
+                      onTap: () {
+                        var currentDate = DateTime.now();
+                        var formattedDate = DateFormat(
+                          'dd-MM-yyyy',
+                        ).format(currentDate);
+                        if (formKey.currentState!.validate()) {
+                          formKey.currentState!.save();
+                          addNoteMethod(formattedDate, context);
+                        } else {
+                          autovalidateMode = AutovalidateMode.always;
+                        }
+                      },
+                    ),
+              ),
+              SizedBox(height: 20),
+            ],
+          ),
         ],
       ),
     );
