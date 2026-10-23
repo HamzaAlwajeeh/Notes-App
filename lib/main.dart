@@ -35,7 +35,7 @@ class NotesApp extends StatelessWidget {
         BlocProvider(create: (context) => AddNoteCubit()),
       ],
       child: MaterialApp(
-        locale: const Locale('en'),
+        locale: const Locale('ar'),
         localizationsDelegates: [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
